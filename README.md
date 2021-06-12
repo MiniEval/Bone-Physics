@@ -1,5 +1,7 @@
 # Cloth-based Bone Physics for Blender
 
+Demonstration: https://www.youtube.com/watch?v=DY9i0HolVmI
+
 Based on the physics setup shown here:
 https://www.youtube.com/watch?v=uV5DE0CkUow
 
