@@ -1,5 +1,7 @@
 # Gravity Collider Bone Physics for Blender
 
+A cloth-based bone collider plugin for animating armatures with physics.
+
 Demonstration: https://www.youtube.com/watch?v=DY9i0HolVmI
 
 Based on the physics setup shown here:
