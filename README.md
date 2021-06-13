@@ -1,4 +1,4 @@
-# Cloth-based Bone Physics for Blender
+# Gravity Collider Bone Physics for Blender
 
 Demonstration: https://www.youtube.com/watch?v=DY9i0HolVmI
 
