@@ -1,11 +1,12 @@
-# Cloth-based Bone Physics for Blender
+# Gravity Collider Bone Physics for Blender
+
+A cloth-based bone collider plugin for animating armatures with physics. This setup works only on connected joint chains. Non-connected bones will require separate colliders.
 
 Demonstration: https://www.youtube.com/watch?v=DY9i0HolVmI
 
 Based on the physics setup shown here:
 https://www.youtube.com/watch?v=uV5DE0CkUow
 
-This setup works only on connected joint chains. Non-connected bones will require separate colliders.
 
 ## How to use:
 ![](https://github.com/MiniEval/Bone-Physics/blob/main/UI.PNG)
