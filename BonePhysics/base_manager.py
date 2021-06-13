@@ -36,7 +36,7 @@ class ManagerPanel(bpy.types.Panel):
 
     def draw(self, context):
         row = self.layout.row()
-        row.label(text="Cloth-Based Bone Physics v1.0")
+        row.label(text="Gravity Collider v1.0")
 
         if context.active_object and context.active_object.type == "ARMATURE":
             rows = 5

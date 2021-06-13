@@ -1,8 +1,10 @@
 bl_info = {
-    "name": "Cloth-Based Bone Physics",
-    "description": "Workflow automation of cloth collision setups for armature bones.",
+    "name": "Gravity Collider Bone Physics",
+    "description": "Workflow automation of cloth-based bone collider setups for armature bones.",
+    "author": "MiniEval_, AZmaybe9",
     "blender": (2, 92, 0),
     "category": "Physics",
+    "tracker_url": "https://github.com/MiniEval/Bone-Physics",
     "support": "COMMUNITY",
     "version": (1, 0)
 }

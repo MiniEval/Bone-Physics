@@ -65,6 +65,8 @@ def delete_box(context, bone_names, empty=False):
 
 
 class BonePhys_Delete_Box(bpy.types.Operator):
+    """Delete collision boxes for selected bones"""
+
     bl_idname = "armature.delete_collision_box"
     bl_label = "Delete collision boxes"
     bl_options = {'REGISTER', 'UNDO'}
@@ -189,6 +191,8 @@ def setup_cloth(col_obj):
 
 
 class BonePhys_Bake_Collision_Mesh(bpy.types.Operator):
+    """Bake collision boxes of selected bones into a simulated cloth-based collider"""
+
     bl_idname = "armature.bake_collision_box"
     bl_label = "Bake collision mesh with selected bones"
     bl_options = {'REGISTER', 'UNDO'}
