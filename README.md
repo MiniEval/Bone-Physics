@@ -4,6 +4,8 @@ A cloth-based bone collider plugin for animating armatures with physics. This se
 
 Demonstration: https://www.youtube.com/watch?v=DY9i0HolVmI
 
+An actual useful tutorial: https://www.youtube.com/watch?v=8rlhOAh5CiU
+
 Based on the physics setup shown here:
 https://www.youtube.com/watch?v=uV5DE0CkUow
 
