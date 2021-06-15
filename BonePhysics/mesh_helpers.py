@@ -110,9 +110,6 @@ def assign_ik_target_groups(col_obj, bone_names, armature):
 def assign_ik_pole_group(box):
     POLE_CO = (1.0, 1.0, 0.0)
 
-    if not box.name.endswith("_bonephys_col"):
-        return
-
     group = box.vertex_groups.new(name=box.name[:-len("_col")] + "_pt")
 
     bm = bmesh.new()

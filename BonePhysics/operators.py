@@ -5,6 +5,8 @@ from .mesh_helpers import *
 
 def init_box(context, bone):
     mesh = bpy.data.meshes.new(bone.name + "_bonephys_box")
+    if bpy.data.objects.get(bone.name + "_bonephys_col"):
+        bpy.data.objects.remove(bpy.data.objects.get(bone.name + "_bonephys_col"), do_unlink=True)
     box_obj = bpy.data.objects.new(bone.name + "_bonephys_col", mesh)
     context.scene.collection.objects.link(box_obj)
 
@@ -125,8 +127,11 @@ def bake_meshes(context):
 
     if armature.data.bake_with_pt:
         for i in range(len(obj_bone_names)):
+            if bpy.data.objects.get(obj_bone_names[i] + "_bonephys_pt"):
+                bpy.data.objects.remove(bpy.data.objects.get(obj_bone_names[i] + "_bonephys_pt"), do_unlink=True)
             pole_empty = bpy.data.objects.new(obj_bone_names[i] + "_bonephys_pt", None)
             context.scene.collection.objects.link(pole_empty)
+
             group = col_obj.vertex_groups.get(obj_bone_names[i] + "_bonephys_pt")
             v_parent = [v for v in col_obj.data.vertices if group.index in [vg.group for vg in v.groups]]
 
@@ -146,9 +151,9 @@ def init_vgroups(col_obj, obj_bone_names, armature):
     col_obj.vertex_groups.new(name="stiff")
     col_obj.vertex_groups.new(name="pin")
     for name in obj_bone_names:
-        parent = armature.data.bones.get(name).parent.name
-        if parent not in obj_bone_names:
-            col_obj.vertex_groups.new(name=parent)
+        parent = armature.data.bones.get(name).parent
+        if parent and parent not in obj_bone_names:
+            col_obj.vertex_groups.new(name=parent.name)
 
         col_obj.vertex_groups.new(name=name + "_bonephys_ik")
         col_obj.vertex_groups.new(name=name + "_bonephys_pt")
