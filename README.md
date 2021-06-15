@@ -18,3 +18,7 @@ https://www.youtube.com/watch?v=uV5DE0CkUow
 3. Scale and roll collision boxes to desired transforms.
 4. Click "Bake Collision Boxes" to set up rig. "Bake with Pole Targets" can be selected to respect the rotation of collision boxes in the physics simulation (may result in undesired twisting).
 5. (Optional) Fine-tune the "pin" vertex group of the collider object to meet stiffness requirements.
+
+## Changelog
+
+v1.0.1: Fixed parenting issues caused by object naming conflicts.
