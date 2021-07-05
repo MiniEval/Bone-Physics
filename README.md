@@ -13,6 +13,8 @@ https://www.youtube.com/watch?v=uV5DE0CkUow
 ## How to use:
 ![](https://github.com/MiniEval/Bone-Physics/blob/main/UI.PNG)
 
+Prerequisite: Please ensure the armature is in its rest pose for the setup.
+
 1. Select bones in edit mode.
 2. Click "Initialise Collision Boxes" to create collision boxes for each selected bone
 3. Scale and roll collision boxes to desired transforms.
