@@ -23,4 +23,9 @@ Prerequisite: Please ensure the armature is in its rest pose for the setup.
 
 ## Changelog
 
-v1.0.1: Fixed parenting issues caused by object naming conflicts.
+v1.0.2: 
+- Added error handlers for excessively long bone/object names.
+- Fixed vertex group dependency cycles
+
+v1.0.1: 
+- Fixed parenting issues caused by object naming conflicts.
