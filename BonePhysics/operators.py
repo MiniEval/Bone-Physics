@@ -154,8 +154,6 @@ def bake_meshes(context):
     print(obj_bone_names)
     for i in range(len(obj_bone_names)):
         col_obj.vertex_groups.remove(col_obj.vertex_groups.get(obj_bone_names[i] + "_bonephys_pt"))
-        if col_obj.vertex_groups.get(obj_bone_names[i]):
-            col_obj.vertex_groups.remove(col_obj.vertex_groups.get(obj_bone_names[i]))
 
     return col_obj, obj_bone_names, armature
 
@@ -194,6 +192,10 @@ def setup_ik(col_obj, bone_names, armature):
 
     arm_mod = col_obj.modifiers.new("Armature", type="ARMATURE")
     arm_mod.object = armature
+
+    for i in range(bone_names):
+        if col_obj.vertex_groups.get(bone_names[i]):
+            col_obj.vertex_groups.remove(col_obj.vertex_groups.get(bone_names[i]))
 
 
 def setup_cloth(col_obj):
