@@ -193,7 +193,7 @@ def setup_ik(col_obj, bone_names, armature):
     arm_mod = col_obj.modifiers.new("Armature", type="ARMATURE")
     arm_mod.object = armature
 
-    for i in range(bone_names):
+    for i in range(len(bone_names)):
         if col_obj.vertex_groups.get(bone_names[i]):
             col_obj.vertex_groups.remove(col_obj.vertex_groups.get(bone_names[i]))
 
