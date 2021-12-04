@@ -7,7 +7,7 @@ bl_info = {
     "category": "Physics",
     "tracker_url": "https://github.com/MiniEval/Bone-Physics",
     "support": "COMMUNITY",
-    "version": (1, 0, 1)
+    "version": (1, 0, 2)
 }
 
 

@@ -44,6 +44,9 @@ class BonePhys_Initialise_Box(bpy.types.Operator):
 
     def execute(self, context):
         for bone in context.selected_bones:
+            if len(bone.name) >= 60 - len("_bonephys_col"):
+                self.report({'ERROR_INVALID_CONTEXT'}, "Excessively long bone name")
+                return {'CANCELLED'}
             if context.active_object.data.bonephys.find(bone.name) != -1:
                 continue
             box_obj = init_box(context, bone)
@@ -88,6 +91,13 @@ def bake_meshes(context):
     bones = context.selected_bones
     objs = []
     obj_bone_names = []
+
+    if len(armature.name) >= 60 - len("_bonephys_col"):
+        return None, ["Excessively long armature name"], None
+
+    for bone in bones:
+        if len(bone.name) >= 60 - len("_bonephys_col"):
+            return None, ["Excessively long bone name"], None
 
     for bone in bones:
         prop = context.active_object.data.bonephys.find(bone.name)
@@ -141,8 +151,11 @@ def bake_meshes(context):
 
             pole_empty.hide_viewport = True
 
+    print(obj_bone_names)
     for i in range(len(obj_bone_names)):
         col_obj.vertex_groups.remove(col_obj.vertex_groups.get(obj_bone_names[i] + "_bonephys_pt"))
+        if col_obj.vertex_groups.get(obj_bone_names[i]):
+            col_obj.vertex_groups.remove(col_obj.vertex_groups.get(obj_bone_names[i]))
 
     return col_obj, obj_bone_names, armature
 
@@ -204,6 +217,9 @@ class BonePhys_Bake_Collision_Mesh(bpy.types.Operator):
 
     def execute(self, context):
         col_obj, bone_names, armature = bake_meshes(context)
+        if col_obj is None:
+            self.report({'ERROR_INVALID_CONTEXT'}, bone_names[0])
+            return {'CANCELLED'}
         setup_ik(col_obj, bone_names, armature)
         setup_cloth(col_obj)
 
