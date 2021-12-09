@@ -66,7 +66,7 @@ def assign_ik_target_groups(col_obj, bone_names, armature):
 
     verts = []
     for v in bm.verts:
-        if vert_group.index in v[deforms].keys() and (v[deforms][vert_group.index] - 1.0) < 1e-4:
+        if vert_group.index in v[deforms].keys() and abs(v[deforms][vert_group.index] - 1.0) < 1e-4:
             verts.append(v)
 
     tail_kd = mathutils.kdtree.KDTree(len(bone_names))
